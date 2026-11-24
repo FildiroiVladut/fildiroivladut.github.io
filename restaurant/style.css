@@ -292,7 +292,7 @@ p {
 
 /*Hero Section*/
 #hero {
-  background-image: url("/images/TEAM-UPDATED.jpg");
+  background-image: url("images/TEAM-UPDATED.jpg");
   background-color: #464646;
   background-size: cover;
   background-position: top center;
@@ -426,7 +426,7 @@ p {
   flex-direction: column;
   padding: 30px;
   border-radius: 10px;
-  background-image: url("/images/the-chef.jpg");
+  background-image: url("images/the-chef.jpg");
   background-size: cover;
   margin: 10px 5%;
   background-position: bottom center;

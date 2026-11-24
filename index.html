@@ -3,451 +3,147 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ΚΛΙΛΜO̲</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Vladut Fildiroi · Projects</title>
+    <meta name="description" content="Projects by Vladut Fildiroi: web apps, games and experiments." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f7f7f5;
+        --card: #ffffff;
+        --text: #1b1b1f;
+        --muted: #62626b;
+        --line: #e4e4e0;
+        --accent: #2f5bea;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #121214;
+          --card: #1b1b1f;
+          --text: #ececef;
+          --muted: #9a9aa3;
+          --line: #2a2a30;
+          --accent: #7b9bff;
+        }
+      }
+      * { box-sizing: border-box; margin: 0; }
+      body {
+        font-family: "Manrope", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+        padding: 4rem 1.25rem;
+      }
+      main { max-width: 960px; margin: 0 auto; }
+      header { margin-bottom: 3rem; }
+      h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em; }
+      header p { color: var(--muted); margin-top: 0.5rem; max-width: 52ch; }
+      header a { color: var(--accent); }
+      h2 {
+        font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em;
+        color: var(--muted); margin: 2.5rem 0 1rem;
+      }
+      .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); }
+      .card {
+        background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+        padding: 1.25rem; display: flex; flex-direction: column; gap: 0.6rem;
+        transition: transform 0.15s ease, border-color 0.15s ease;
+      }
+      .card:hover { transform: translateY(-2px); border-color: var(--accent); }
+      .card h3 { font-size: 1.1rem; }
+      .card p { color: var(--muted); font-size: 0.92rem; flex: 1; }
+      .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+      .tags span {
+        font-size: 0.72rem; border: 1px solid var(--line); border-radius: 999px;
+        padding: 0.1rem 0.55rem; color: var(--muted);
+      }
+      .links { display: flex; gap: 1rem; font-weight: 600; font-size: 0.9rem; }
+      .links a { color: var(--accent); text-decoration: none; }
+      .links a:hover { text-decoration: underline; }
+      .links .off { color: var(--muted); font-weight: 400; }
+      footer { margin-top: 4rem; color: var(--muted); font-size: 0.85rem; }
+      footer a { color: inherit; }
+    </style>
   </head>
   <body>
-    <div class="modal" id="modal">
-      <div class="modal-header">
-        <div class="section-title">Awards</div>
-        <button data-close-button class="close-button">&times;</button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-item">
-          <img class="modal-img img" src="images/50bestolog.png" alt="" />
-          <h1 class="modal-title">"2019-present"</h1>
-        </div>
-        <div class="modal-item">
-          <img class="modal-img img" src="images/gault.png" alt="" />
-          <h1  class="modal-title">"15 points and 3 bonnets"</h1>
-        </div>
-        <div class="modal-item">
-          <img class="modal-img img" src="images/Restocracy.jpg" alt="" />
-          <h1  class="modal-title">"Best new location 2019"</h1>
-        </div>
-        <div class="modal-item">
-          <img class="modal-img img" src="images/horeca awards.jpg" alt="" />
-          <h1  class="modal-title">"Best new location 2019" </h1>
-        </div>
-      </div>
-    </div>
-    <div id="overlay"></div>
-    <!--Header-->
-    <section id="header">
-      <div class="header container">
-        <div class="nav-bar">
-          <div class="brand">
-            <a href="#hero"
-              ><h1>
-                <strong> ΚΛΙΛΜ<u>O</u></strong>
-              </h1></a
-            >
-           
-          </div>
-          <div class="nav-list">
-            <div class="hamburger"><div class="bar"></div></div>
-            <ul>
-              <li><a href="#hero" data-after="Home">Home</a></li>
-              <li>
-                <a href="#philosophy" data-after="Philosophy">Philosophy</a>
-              </li>
-              <li><a href="#menu" data-after="Menu">Menu</a></li>
-              <li><a href="#contact" data-after="Contact">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--End of Header-->
-
-    <!-- Hero Section -->
-    <section id="hero">
-      <div class="hero container">
-        <div>
-          <h1>Hello,<span></span></h1>
-          <h1>We are<span></span></h1>
-          <h1>KAIAM<u>O</u><span></span></h1>
-          <a data-modal-target="#modal" type="button" class="cta">Awards</a>
-        </div>
-      </div>
-    </section>
-    <!-- End Hero Section -->
-
-    <!-- Philosophy -->
-
-    <section id="philosophy">
-      <div class="philosophy container">
-        <div class="philosophy-top">
-          <h1 class="section-title">Philosophy</h1>
-          <p>
-            A symbiosis between the nature that surrounds us and the passing of
-            age. In our kitchen, the aim is to go back to the origins of our
-            ancestors when meals were defined by the geographical position and
-            the season upon it.
-          </p>
-        </div>
-        <div class="philosophy-bottom">
-          <div class="philosophy-item the-concept">
-            <div class="icon">
-              <img
-                src="https://img.icons8.com/cotton/64/000000/greek-pillar-capital--v2.png"
-              />
-            </div>
-            <h2>The Concept</h2>
-            <p>
-              ΚΛΙΛΜ<u>O</u> is all about seasonality and terroir. Our menu
-              changes once every three months. In this scenario, nature is the
-              true artist. As Chefs, we just prepare the main stage for it to
-              shine at its own pace through a particular form of cuisine.
-            </p>
-            <video autoplay muted loop>
-              <source src="/videos/concept.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <div class="philosophy-item the-chef">
-            <div class="icon">
-              <img
-                src="https://img.icons8.com/cotton/64/000000/greek-pillar-capital--v2.png"
-              />
-            </div>
-            <h2>The Chef</h2>
-            <p>
-              Chef Radu Ionescu spent 7 years abroad, in the city of London,
-              where he pursued a career in business & marketing that radically
-              shifted, leading the young lad to the aspiring world of
-              gastronomy. The work experience started from small neighborhood
-              restaurants, to 5-Star hotels and ending up in the kitchen of the
-              notorious Chef Ollie Dabbous at his 1 Michelin Star extravaganza.
-              Chef Radu graduated from Le Cordon Bleu with a Grand Diplôme de
-              Cuisine et Pâtisserie followed by a Diploma in Culinary
-              Management, becoming an Alumni of this iconic institute, in 2015.
-            </p>
-          </div>
-          <div class="philosophy-item the-restaurant">
-            <div class="icon">
-              <img
-                src="https://img.icons8.com/cotton/64/000000/greek-pillar-capital--v2.png"
-              />
-            </div>
-            <h2>The Restaurant</h2>
-            <p>
-              ΚΛΙΛΜ<u>O</u> is genuinely defined by the imperfect perfection.
-              The cracks, the efforts, the sacrifices we desire to share with
-              each and every guest. Our table tops are custom-made from very old
-              Romanian wood, rescued before being turned into coal.
-            </p>
-            <video autoplay muted loop>
-              <source src="/videos/video-wood.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div class="philosophy-item the-food">
-            <div class="icon">
-              <img
-                src="https://img.icons8.com/cotton/64/000000/greek-pillar-capital--v2.png"
-              />
-            </div>
-            <h2>The Food</h2>
-            <p>
-              <ul>
-              <li>Experimental Dining.</li> 
-              <li>Conceptual Cuisine.</li> 
-              <li>Steak Extravaganza.</li>
-              <li>Reborned Romanian Dishes.</li>
-              </ul>
-            </p>
-            <video autoplay muted loop>
-              <source src="/videos/the-food.mp4" type="video/mp4" />
-            </video>
-          </div>
-
-          <div class="philosophy-item farming-philo">
-            <div class="icon">
-              <img
-                src="https://img.icons8.com/cotton/64/000000/greek-pillar-capital--v2.png"
-              />
-            </div>
-            <h2>The Ingredients</h2>
-            <p>
-              From plant to plate. We’ve been doing it since 2001; it’s in our
-              DNA. You can’t put a price on the inspiration and freshness of
-              ingredients handpicked from the garden. Working the soil,
-              planting, watering and harvesting: we do them all with pleasure.
-            </p>
-            <video autoplay muted loop>
-              <source src="/videos/video.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
-        
-        <div class="philosophy-bottom-2">
-         
-          <p>
-            As a guest, we invite you to step into our world and allow us to influence yours.
-            <br>
-            Contemplate this.
-          </p>
-
-        </div>
-
-      </div>
-    </section>
-    <!--End of Philosophy -->
-     <hr>
-    <!--Menu section-->
-    <section id="menu">
-      <div class="menu container">
-        <div class="menu-header">
-          <h1 id="AICI" class="section-title">Seasonal Menu</h1>
-          <p class="menu-paragraph">
-            UNCHARTED ORIGINS. ROMANIAN TRIBUTE.<br>  
-            A symbol of change. A concept of contrast. A pure art form of nostalgia. A story that underlines the fear of mediocrity and the tendency to exploit the peak of potential and constantly strive for the absolute.<br>
-            Those dishes are some of our all time favourite:
-          
-          </p>
-        </div>
-        <div class="all-menu">
-          <div class="menu-item">
-            <div class="menu-info">
-              <h1>"Sunny Day in Transylvania"</h1>
-              <h2>A crepe of active charcoal encasing saffron pilau, a lazy snail, sourdough soil, algae caviar, organic micro-tomatoes and roasted kapia & dried tomatoes sauce. </h2>
-              <p>
-                As the first leaves of autumn touch the warm ground, shy and gentle textures of the earth inspire us continuously. With a touch of bronze.
-
-              </p>
-            </div>
-            <div class="menu-img">
-              <img src="images/sunny-day.jpg" alt="img" />
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-info">
-              <h1>"Aphrodisiac"</h1>
-              <h2>Oyster of coconut and jasmine, black tea, cassava pearls</h2>
-              <p>
-                This is slowly becoming our perfect flower, blooming day by day in its quest for the absolute. An aphrodisiac of senses and fulfillment. Showcased now, just before this weekend’s OYSTER FEAST. Offer us a glimpse of your own perception and allow us to twist it without boundaries of patterns. Allow synesthesia to kick in and embrace your taste buds from that first little bite. Look closer, things are changing.
-              </p>
-            </div>
-            <div class="menu-img">
-              <img src="images/aphrodisiac.jpeg" alt="img" />
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-info">
-              <h1>"Nose to tail"</h1>
-              <h2>Lobster tail cured in Mangalica pure fat, crustaceans & tomato seeds sauce, foam of pickled elderflowers</h2>
-              <p>
-                From the ideology of nose to tail, we take upon in synergy the noble lobster tail and cure it in the humble Mangalica fat. To that, add a splash of classic bisque from the shells and a foamy air of pickled elderflowers.
-              </p>
-            </div>
-            <div class="menu-img">
-              <img src="images/lobster.jpg" alt="img" />
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-info">
-              <h1>"Ostropoda"</h1>
-              <h2>Charred octopus, ripe tomatoes, smoked garlic</h2>
-              <p>
-                A classic Romanian sauce, derivative of ‘ostropel’ with a sea creature to enhance the ripeness of summer heritage tomatoes and confit garlic. Some say a classic with a twist. We say it’s worth a taste. 
-              </p>
-            </div>
-            <div class="menu-img">
-              <img src="images/octo.jpg" alt="img" />
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-info">
-              <h1>"Taste of Tomorrow"</h1>
-              <h2>Pumpkin. 9 different textures.</h2>
-              <p>
-                Some might see a Halloween themed dish. We see something else. A philosophy of the simple idea that one day, due to the over-consumption and misfit globalization, we may end up running out of ingredients. And it would be a shame. However, this dish underlines the versatility of ingredients such a humble pumpkin. In this plate you will notice 9 different textures of pumpkin. Salt and pepper. And hints of local dairy. The change won’t happen if we won’t. 
-              </p>
-            </div>
-            <div class="menu-img">
-              <img src="images/pumpkin.jpg" alt="img" />
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="menu-info">
-              <h1>"The Bunger"</h1>
-              <h2>Our signature #BUNGER. A fluffy milk bun with charcoal. Filled with a decadence of grade 9 wagyu, pan fried foiegras and local truffles. </h2>
-              <p>
-                Let us repeat that again: WAGYU, FOIE GRAS & TRUFFLES. In a milk bun.
-              </p>
-            </div>
-            <div class="menu-img">
-              <img src="images/bunger.jpg" alt="img" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <hr>
-    
-    <!--End of Menu section-->
-
-
-   
-    <!--Carousel Section-->
-
-    <div id="carousel-container">
-      <div id="carousel">
-        <div class="slides slide-1">
-          <div class="slide-data">
-            <h1>Details</h1> 
-          </div>
-      
-        </div>
-        <div class="slides slide-2">
-          <div class="slide-data">
-            <h1>Do</h1> 
-          </div>
-      
-        </div>
-        <div class="slides slide-3">
-          <div class="slide-data">
-            <h1>Matter</h1> 
-          </div>
-      
-        </div>
-        <div class="slides slide-4">
-          <div class="slide-data">
-            <h1>.</h1> 
-          </div>
-      
-        </div>
-       
-      
-        </div>
-      </div>
-    </div>
-
-    
-
-    <!--End of carousel section-->
-
-
-
-
-
-    <!--Contact section-->
-    <hr>
-    <section id="contact">
-      <div class="contact container">
-        <div><h1 class="section-title">Contact</h1></div>
-        <div class="contact-items">
-          <div class="contact-item">
-            <div class="icon">
-              <img
-                src="https://img.icons8.com/fluent-systems-filled/24/000000/phone.png"
-              />
-            </div>
-            <div class="contact-info">
-              <h1>Phone</h1>
-              <h2>0722202204</h2>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="icon">
-              <img src="https://img.icons8.com/metro/26/000000/email.png" />
-            </div>
-            <div class="contact-info">
-              <h1>Email</h1>
-              <h2>contact@kaiamo.com</h2>
-            </div>
-          </div>
-          <div class="contact-item">
-            <div class="icon">
-              <img
-                src="https://img.icons8.com/material-rounded/24/000000/worldwide-location.png"
-              />
-            </div>
-            <div class="contact-info">
-              <h1>Adress</h1>
-              <h2>Str. Ermil Pangratti 30A, Bucharest </h2>
-            </div>
-          </div>
-          
-         
-        </div>
-        
-      </div>
-    </section>
-
-    <div class="careers">
-      <h1 class="careers-header">Careers:</h1>
-      <p>
-       
-      We are always in the search for genuine, hardworking & open-minded <b>professionals</b> to join our team of elites. If you would like to take a step forward in your career and become a part of our unique journey, please drop us a CV at <b>careers@kaiamo.ro</b> or contact our Project Manager directly at <b>cezara.tanase@kaiamo.ro</b> or simply just give us a call on <b>0722202204</b>.
-
-      </p>
-    </div>
-
-    <!--End of Contact section-->
-
-    <div class="operating-hours">
-      <div><h1 class="section-title operating-title">OPERATING HOURS</h1></div>
-      <hr>
-      
-      <p class="operating-text">
-      
-      
-      MONDAY    –  CLOSED <br>
-      TUESDAY   – 12:00-15:00   || 18:00-23:00<br>
-      WEDNESDAY – 12:00-15:00   || 18:00-23:00<br>
-      THURSDAY  – 12:00-15:00   || 18:00-23:00<br>
-      FRIDAY    – 12:00-15:00   || 18:00-24:00<br>
-      SATURDAY  – 12:00-15:00   || 18:00-24:00<br>
-      SUNDAY    – 12:00-16:00<br>
-
-      (KITCHEN IS CLOSED BETWEEN 15:00-18:00)
-      <hr>
-    </p>
-    </div>
-
-    <!--FOOTER-->
-
-    <section id="footer">
-      <div class="footer container">
-        <div class="brand">
-          <img class="mo" src="/images/face-mask.png" alt="">
-        </div>
-        
-        <h2>Experimental Romanian Cuisine</h2>
-        <div class="social-icon">
-          <div class="social-item">
-            <a href="https://www.facebook.com/kaiamo.koncept" target="_blank"
-              ><img
-                src="https://img.icons8.com/carbon-copy/100/000000/facebook-new.png"
-            /></a>
-          </div>
-          <div class="social-item">
-            <a href="https://www.instagram.com/kaiamo/" target="_blank"
-              ><img
-                src="https://img.icons8.com/carbon-copy/100/000000/instagram-new.png"
-            /></a>
-          </div>
-          <div class="social-item">
-            <a href="https://ro.gaultmillau.com/restaurant/kaiamo" target="_blank"
-              ><img src="https://img.icons8.com/dotty/80/000000/prize.png"
-            /></a>
-          </div>
-          <div class="social-item">
-            <a href="https://www.tripadvisor.com/Restaurant_Review-g294458-d15078407-Reviews-Kaiamo-Bucharest.html" target="_blank"
-              ><img src="https://img.icons8.com/ios/50/000000/tripadvisor.png"
-            /></a>
-          </div>
-        </div>
+    <main>
+      <header>
+        <h1>Vladut Fildiroi</h1>
         <p>
-          Copyright © 2020 <strong> ΚΛΙΛΜ<u>O</u></strong
-          >. All rights reserved.
+          Full Stack Developer based in Bucharest. All my projects in one place, from current work
+          to the vanilla JS apps I started with. Code on
+          <a href="https://github.com/FildiroiVladut">GitHub</a>.
         </p>
-      </div>
-    </section>
+      </header>
 
-    <!--END OF FOOTER-->
+      <h2>Current</h2>
+      <section class="grid">
+        <article class="card">
+          <h3>Shelf</h3>
+          <p>Reading tracker built on the Open Library API: shelves, ratings and reading stats.</p>
+          <div class="tags"><span>React</span><span>TypeScript</span><span>TanStack Query</span></div>
+          <div class="links">
+            <a href="https://shelf-ashen.vercel.app">Live demo →</a>
+            <a href="https://github.com/FildiroiVladut/shelf">Code</a>
+          </div>
+        </article>
+      </section>
 
-    <script src="./app.js"></script>
+      <h2>Early projects · 2020</h2>
+      <section class="grid">
+        <article class="card">
+          <h3>Map Your Trips</h3>
+          <p>Log walks and trips on an interactive map, using geolocation and Leaflet.</p>
+          <div class="tags"><span>JavaScript</span><span>Leaflet</span></div>
+          <div class="links">
+            <a href="mapYourTrips/">Live demo →</a>
+            <a href="https://github.com/FildiroiVladut/mapYourTrips">Code</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Budget Controller</h3>
+          <p>Track income and expenses with a running monthly budget, written in ES5.</p>
+          <div class="tags"><span>JavaScript</span><span>ES5</span></div>
+          <div class="links">
+            <a href="BudgetControllApp/">Live demo →</a>
+            <a href="https://github.com/FildiroiVladut/BudgetControllApp">Code</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Pig Game</h3>
+          <p>Two-player dice game: roll to build your score, but a 1 wipes your turn.</p>
+          <div class="tags"><span>JavaScript</span><span>DOM</span></div>
+          <div class="links">
+            <a href="PigGame/">Play →</a>
+            <a href="https://github.com/FildiroiVladut/PigGame">Code</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Fine Dining Restaurant</h3>
+          <p>One-page restaurant website with video sections and a menu showcase.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="links">
+            <a href="restaurant/">Live site →</a>
+            <a href="https://github.com/FildiroiVladut/fildiroivladut.github.io/tree/master/restaurant">Code</a>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Recipe App</h3>
+          <p>Search recipes, scale servings, build a shopping list and save favourites. MVC architecture.</p>
+          <div class="tags"><span>ES6</span><span>Webpack</span><span>Babel</span></div>
+          <div class="links">
+            <span class="off">Demo unavailable</span>
+            <a href="https://github.com/FildiroiVladut/recipeApp">Code</a>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        <a href="https://github.com/FildiroiVladut">github.com/FildiroiVladut</a>
+      </footer>
+    </main>
   </body>
 </html>
